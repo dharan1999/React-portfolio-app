@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import PROJECTS from './data/projects';
+import Projects from './Projects';
+import SocialProfiles from './SocialProfiles';
+import profile from './assets/profile.png';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+    state = {displayBio : false};
+    // constructor(){
+    //     super();
+    //     this.state = { displayBio: false};
+    //     console.log("Component this",this);
+    //      this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
+    // }
+
+    toggleDisplayBio = () => {
+        this.setState({ displayBio: !this.state.displayBio });
+    }
+    render(){
+        return(
+            <div>
+                  <img src={profile} alt='profile' className='profile' />
+                <h1>Hello!</h1>
+                <p>My name is Dharan and I am a Software Engineer</p>
+                <p>I am always looking forward on working on new projects</p>
+                { 
+                this.state.displayBio ? (
+                <div>
+                <p> I live in Montreal, code every day</p>
+                <p>My favourite language is Javascript, and I really like React</p>
+                <p>Besides coding I like coding and trading</p>
+                <button onClick={ this.toggleDisplayBio }>Read less</button> 
+                </div>
+                ) : (
+                    <div>
+                        <button onClick={ this.toggleDisplayBio }>Read more</button>    
+                    </div>
+                )
+                }
+                <hr />
+            <Projects />
+            <hr />
+            <SocialProfiles />
+            </div>
+            
+        )
+    }
 }
 
 export default App;
