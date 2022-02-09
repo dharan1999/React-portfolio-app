@@ -4,7 +4,7 @@ import PROJECTS from './data/projects';
 import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
 import profile from './assets/profile.png';
-
+import Title from './Title';
 
 class App extends Component {
     state = {displayBio : false};
@@ -23,7 +23,8 @@ class App extends Component {
             <div>
                   <img src={profile} alt='profile' className='profile' />
                 <h1>Hello!</h1>
-                <p>My name is Dharan and I am a Software Engineer</p>
+                <p>My name is Dharan</p>
+                <Title />
                 <p>I am always looking forward on working on new projects</p>
                 { 
                 this.state.displayBio ? (
@@ -31,6 +32,7 @@ class App extends Component {
                 <p> I live in Montreal, code every day</p>
                 <p>My favourite language is Javascript, and I really like React</p>
                 <p>Besides coding I like coding and trading</p>
+                <p>I am also a music lovesdefr</p>
                 <button onClick={ this.toggleDisplayBio }>Read less</button> 
                 </div>
                 ) : (
