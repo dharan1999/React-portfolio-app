@@ -32,7 +32,7 @@ class App extends Component {
                 <p> I live in Montreal, code every day</p>
                 <p>My favourite language is Javascript, and I really like React</p>
                 <p>Besides coding I like coding and trading</p>
-                <p>I am also a music lovesdefr</p>
+              
                 <button onClick={ this.toggleDisplayBio }>Read less</button> 
                 </div>
                 ) : (
